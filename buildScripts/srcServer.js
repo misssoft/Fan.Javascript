@@ -8,6 +8,7 @@ import open from 'open';
 import webpack from 'webpack';
 import config from '../webpack.config.dev'
 
+/* eslint-disable no-console*/
 //var port = 3000
 const port = 3000;
 //var app = express();
