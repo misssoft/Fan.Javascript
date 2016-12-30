@@ -2,7 +2,7 @@ export default function getBaseUrl(){
   // const inDevelopment = window.location.hostname === 'localhost';
   // return inDevelopment ? 'http://localhost:3001/': '/';
 
-  return getQueryStringParameterByName('useMockApi')?'http://localhost:3001/':'/';
+  return getQueryStringParameterByName('useMockApi')?'http://localhost:3001/':'https://secure-mesa-20480.herokuapp.com/';
 }
 
 function getQueryStringParameterByName(name, url) {
