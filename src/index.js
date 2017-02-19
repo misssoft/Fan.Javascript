@@ -1,4 +1,4 @@
- import './index.css';
+import './index.css';
 
 import {getUsers, deleteUser, updateUser} from './api/userApi';
 
@@ -41,4 +41,17 @@ getUsers().then(result=>{
       updateUser(element.attributes["data-id"].value, fn, ln);
     };
   });
+  const updateAllLinks = global.document.getElementsByClassName('submit_button');
+    Array.from(updateAllLinks, link =>{
+    link.onclick = function(event){
+         const updateLinks = global.document.getElementsByClassName('updateUser');
+         Array.from(updateLinks, link =>{
+         const row = link.parentNode.parentNode;
+         var tds = row.getElementsByTagName("td");
+         var fn = tds[0].children[0].value;
+         var ln = tds[1].children[0].value;
+         updateUser(tds[3].children[0].attributes["data-id"].value, fn, ln);
+         });
+      };
+   });
 });
