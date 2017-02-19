@@ -1,10 +1,6 @@
  import './index.css';
-// import numeral from 'numeral';
-// const courseValue = numeral(1000).format('$0,0.00');
-// debugger;
-// console.log(`I would pay ${courseValue} for this course!`);
 
-import {getUsers, deleteUser} from './api/userApi';
+import {getUsers, deleteUser, updateUser} from './api/userApi';
 
 //Populate table of users via API call;
 getUsers().then(result=>{
@@ -12,11 +8,10 @@ getUsers().then(result=>{
 
   result.forEach(user =>{
     usersBody += `<tr>
-      <td>${user.id}</td>
-      <td>${user.firstName}</td>
-      <td>${user.lastName}</td>
-      <td>${user.email}</td>
+      <td><input type="text" name="people[][firstname]" value=${user.firstName} /></td>
+      <td><input type="text" name="people[][surname]" value=${user.lastName} /></td>
       <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
+      <td><a href="#" data-id="${user.id}" class="updateUser">Update</a></td>
       </tr>`
   });
 
@@ -33,5 +28,17 @@ getUsers().then(result=>{
       row.parentNode.removeChild(row);
     };
   });
-});
 
+   const updateLinks = global.document.getElementsByClassName('updateUser');
+   Array.from(updateLinks, link =>{
+    link.onclick = function(event){
+      const element = event.target;
+      event.preventDefault();
+      const row = element.parentNode.parentNode;
+      var tds = row.getElementsByTagName("td");
+      var fn = tds[0].children[0].value;
+      var ln = tds[1].children[0].value;
+      updateUser(element.attributes["data-id"].value, fn, ln);
+    };
+  });
+});

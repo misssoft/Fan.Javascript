@@ -3,7 +3,7 @@ export const schema = {
   "properties": {
     "users": {
       "type": "array",
-      "minItems": 3,
+      "minItems": 5,
       "maxItems": 5,
       "items": {
         "type": "object",
@@ -26,7 +26,7 @@ export const schema = {
             "faker": "internet.email",
           }
         },
-        required: ['id', 'firstName', 'lastName', 'email']
+        required: ['id', 'firstName', 'lastName']
       }
     }
   },

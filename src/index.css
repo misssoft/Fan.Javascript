@@ -3,9 +3,16 @@ body{
 }
 
 h1{
-  color:orange;
+  color:mediumblue;
 }
 
 table th{
   padding: 5px;
+}
+
+.submit-button{
+  color:mediumblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1em;
+  margin:5px;
 }
