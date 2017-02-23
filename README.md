@@ -6,11 +6,12 @@ This is a Javascript development starter kit. A learning exercise from Pluralsig
 The starter kit considers
 - ES6 Modules
 - Package Automation (npm script)
+- Web Server (express)
 - Transpiling (babel)
 - Bundle (webpack)
 - Linting (ESLint)
 - Testing (Mocha, Chai)
-- API (Fetch, Jason Server)
+- API (fetch, Jason Server)
 - Deployment (Heroku)
 
 The starter kit includes a Demo project, which 
@@ -26,7 +27,7 @@ To run the demo
 
 After start
 - The web app will be running at: http://localhost:3000   (in Chrome, a refresh is needed to load API data)
-- The web api will be runnign at: http://localhost:3001/users
+- The web api will be running at: http://localhost:3001/users
   
 
 
